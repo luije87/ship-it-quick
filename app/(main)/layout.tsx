@@ -16,20 +16,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <div className="navbar bg-base-100">
-          <div className="flex-1">
-            <a className="btn btn-ghost text-xl">Just Ship It ⚡️</a>
-          </div>
-          <div className="flex-none">
-            <Link href="/sign-in" className="btn">
-              Sign in
-            </Link>
-          </div>
+    <>
+      <div className="navbar bg-base-100">
+        <div className="flex-1">
+          <a className="btn btn-ghost text-xl">Just Ship It ⚡️</a>
         </div>
-        <main>{children}</main>
-      </body>
-    </html>
+        <div className="flex-none">
+          <Link href="/sign-in" className="btn">
+            Sign in
+          </Link>
+        </div>
+      </div>
+      <main>{children}</main>
+    </>
   );
 }

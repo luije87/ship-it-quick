@@ -1,7 +1,5 @@
 import { signInAction } from "@/app/actions";
-import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 
 export default function Example() {
   console.log("sign-in/page.tsx");
