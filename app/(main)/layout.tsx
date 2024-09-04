@@ -14,11 +14,18 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 fixed">
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl">Just Ship It ⚡️</a>
+          <a href="/" className="btn btn-ghost text-xl">
+            Just Ship It ⚡️
+          </a>
         </div>
         <div className="flex-none">
+          <ul className="menu menu-horizontal px-1">
+            <li>
+              <a href="/pricing">Pricing</a>
+            </li>
+          </ul>
           <Link href="/sign-in" className="btn">
             Sign in
           </Link>
