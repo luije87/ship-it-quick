@@ -17,13 +17,20 @@ export default function RootLayout({
       <div className="navbar bg-base-100 fixed">
         <div className="flex-1">
           <Link href="/" className="btn btn-ghost text-xl">
-            Just Ship It ⚡️
+            Ship It Quick ⚡️
           </Link>
         </div>
         <div className="flex-none">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <a href="/pricing">Pricing</a>
+          <ul className="px-3 gap-5 flex mr-5">
+            <li className="hover:link">
+              <Link href="/pricing" className="hover:link">
+                Pricing
+              </Link>
+            </li>
+            <li className="hover:link">
+              <Link href="/dashboard" className="hover:link">
+                Dashboard
+              </Link>
             </li>
           </ul>
           <Link href="/sign-in" className="btn">
