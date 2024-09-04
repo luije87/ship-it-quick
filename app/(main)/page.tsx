@@ -6,7 +6,7 @@ export default function Home() {
     <div className="hero min-h-screen">
       <div className="hero-content text-center">
         <div className="max-w-5xl">
-          <h1 className="text-5xl font-bold mb-5">🚀</h1>
+          <h1 className="text-5xl font-bold mb-5">⚡️</h1>
           <h1 className="text-5xl font-bold">Launch Your Startup today</h1>
           <h1 className="text-3xl font-bold">
             Faster, Smarter, Easier and Free
