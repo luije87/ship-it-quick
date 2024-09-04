@@ -10,7 +10,7 @@ export default function Home() {
           <h1 className="text-3xl font-bold">Faster, Smarter and Easier</h1>
           <p className="py-6">
             In the fast-paced world of shipping startups, speed is everything.
-            "Ship it Quick" empowers you to launch your startup with lightning
+            Ship it Quick empowers you to launch your startup with lightning
             speed using cutting-edge technology. Our platform combines the power
             of Next.js, Supabase, Tailwind CSS, DaisyUI, and Resend, so you can
             focus on innovation while we handle the heavy lifting.
