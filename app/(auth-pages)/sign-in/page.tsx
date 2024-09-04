@@ -21,7 +21,6 @@ export default function Example() {
             <span className="label-text">Email</span>
           </div>
           <input
-            value="luis2@gmail.com"
             name="email"
             type="email"
             placeholder="Email"
@@ -43,7 +42,6 @@ export default function Example() {
             </span>
           </div>
           <input
-            value="luije1987"
             name="password"
             type="password"
             placeholder="Your password"
