@@ -16,9 +16,9 @@ export default function RootLayout({
     <>
       <div className="navbar bg-base-100 fixed">
         <div className="flex-1">
-          <a href="/" className="btn btn-ghost text-xl">
+          <Link href="/" className="btn btn-ghost text-xl">
             Just Ship It ⚡️
-          </a>
+          </Link>
         </div>
         <div className="flex-none">
           <ul className="menu menu-horizontal px-1">
