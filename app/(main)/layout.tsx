@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { signOutAction } from "../actions";
 import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
+import { APPLICATION_NAME } from "@/config";
 
 export const metadata: Metadata = {
   title: "Ship it Quick",
@@ -25,7 +26,7 @@ export default async function RootLayout({
       <div className="navbar bg-base-100 fixed">
         <div className="flex-1">
           <Link href="/" className="btn btn-ghost text-xl">
-            Ship It Quick ⚡️
+            {APPLICATION_NAME}
           </Link>
         </div>
         <div className="flex-none">

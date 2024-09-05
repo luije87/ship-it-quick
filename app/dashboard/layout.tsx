@@ -1,5 +1,6 @@
 import "@/app/globals.css";
 import { signOutAction } from "../actions";
+import { APPLICATION_NAME } from "@/config";
 
 export const metadata = {
   title: "Ship it quick ⚡️",
@@ -11,7 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       <div className="navbar bg-base-100">
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl">Dashboard ⚡️</a>
+          <a className="btn btn-ghost text-xl">{APPLICATION_NAME}</a>
         </div>
         <div className="flex-none">
           <form>

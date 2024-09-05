@@ -1,4 +1,5 @@
 import "@/app/globals.css";
+import { APPLICATION_NAME } from "@/config";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -17,7 +18,7 @@ export default async function Layout({
       <div className="navbar bg-base-100">
         <div className="flex-1">
           <Link className="btn btn-ghost text-xl" href={"/"}>
-            Ship It Quick ⚡️
+            {APPLICATION_NAME}
           </Link>
         </div>
       </div>
