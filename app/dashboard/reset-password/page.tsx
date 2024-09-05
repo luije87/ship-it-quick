@@ -1,4 +1,4 @@
-import { resetPasswordAction } from "@/app/actions";
+import { resetPasswordAction } from "@/utils/auth-helpers/actions";
 
 export default async function ResetPassword() {
   return (
