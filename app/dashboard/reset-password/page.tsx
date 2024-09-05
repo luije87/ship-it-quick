@@ -1,6 +1,11 @@
+import { FormMessage, Message } from "@/components/ui/form-message";
 import { resetPasswordAction } from "@/utils/auth-helpers/actions";
 
-export default async function ResetPassword() {
+export default async function ResetPassword({
+  searchParams,
+}: {
+  searchParams: Message;
+}) {
   return (
     <div className="flex max-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -9,6 +14,7 @@ export default async function ResetPassword() {
           <p className="text-sm text-foreground/60">
             Please enter your new password below.
           </p>
+          <FormMessage message={searchParams} />
           <label className="form-control w-full max-w-xs">
             <div className="label">
               <span className="label-text">New password</span>
