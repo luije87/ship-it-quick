@@ -1,17 +1,24 @@
 import "@/app/globals.css";
+import { createClient } from "@/utils/supabase/server";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { signOutAction } from "../actions";
 
 export const metadata: Metadata = {
   title: "Ship it Quick",
   description: "The fastest way to ship your projects",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const supabase = createClient();
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
   return (
     <>
       <div className="navbar bg-base-100 fixed">
@@ -33,9 +40,22 @@ export default function RootLayout({
               </Link>
             </li>
           </ul>
-          <Link href="/sign-in" className="btn">
-            Sign in
-          </Link>
+          {user ? (
+            <>
+              <form>
+                <button formAction={signOutAction} className="btn">
+                  Sign out
+                </button>
+              </form>
+            </>
+          ) : (
+            <>
+              {" "}
+              <Link href="/sign-in" className="btn">
+                Sign in
+              </Link>
+            </>
+          )}
         </div>
       </div>
       <main>{children}</main>
