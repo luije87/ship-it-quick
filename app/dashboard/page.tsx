@@ -13,23 +13,14 @@ export default async function Dashboard() {
   }
 
   return (
-    <div className="flex max-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        <div className="flex-1 w-full flex flex-col gap-12">
-          <div className="w-full">
-            <div className="bg-accent text-sm p-3 px-5 rounded-md text-foreground flex gap-3 items-center">
-              {/* <InfoIcon size="16" strokeWidth={2} /> */}
-              This is a protected page that you can only see as an authenticated
-              user
-            </div>
-          </div>
-          <div className="flex flex-col gap-2 items-start">
-            <h2 className="font-bold text-2xl mb-4">Your user details</h2>
-            <pre className="text-xs font-mono p-3 rounded border max-h-32 overflow-auto">
-              {JSON.stringify(user, null, 2)}
-            </pre>
-          </div>
-        </div>
+    <div className="w-full max-w-5xl items-center justify-center mx-auto">
+      <h2 className="font-bold text-2xl mb-4">
+        This is a protected route. Your user details
+      </h2>
+      <div className="mockup-code">
+        <pre data-prefix="">
+          <code>{JSON.stringify(user, null, 6)}</code>
+        </pre>
       </div>
     </div>
   );
