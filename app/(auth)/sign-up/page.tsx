@@ -1,10 +1,6 @@
 import { signUpAction } from "@/app/actions";
+import { FormMessage, Message } from "@/components/ui/form-message";
 import Link from "next/link";
-
-export type Message =
-  | { success: string }
-  | { error: string }
-  | { message: string };
 
 export default function Example({ searchParams }: { searchParams: Message }) {
   return (
@@ -16,6 +12,7 @@ export default function Example({ searchParams }: { searchParams: Message }) {
           Sign in
         </Link>
       </p>
+      <FormMessage message={searchParams} />
       <div className="flex flex-col gap-2 [&>input]:mb-3 mt-3">
         <label className="form-control w-full max-w-xs">
           <div className="label">
