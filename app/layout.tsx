@@ -4,7 +4,7 @@ import {
   Darker_Grotesque,
   Space_Grotesk,
 } from "next/font/google";
-const inter = Space_Grotesk({ subsets: ["latin"] });
+const font = Space_Grotesk({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={font.className}>
       <body suppressHydrationWarning>{children}</body>
     </html>
   );
