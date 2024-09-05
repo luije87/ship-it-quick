@@ -1,10 +1,10 @@
 import "@/app/globals.css";
+import { APPLICATION_NAME } from "@/config";
+import { signOutAction } from "@/utils/auth-helpers/actions";
 import { createClient } from "@/utils/supabase/server";
+import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { signOutAction } from "../actions";
-import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
-import { APPLICATION_NAME } from "@/config";
 
 export const metadata: Metadata = {
   title: "Ship it Quick",

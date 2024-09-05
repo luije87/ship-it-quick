@@ -1,5 +1,5 @@
 import "@/app/globals.css";
-import { signOutAction } from "../actions";
+import { signOutAction } from "@/utils/auth-helpers/actions";
 import { APPLICATION_NAME } from "@/config";
 
 export const metadata = {
