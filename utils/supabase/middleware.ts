@@ -1,3 +1,4 @@
+import { PROTECTED_ROUTES } from "@/config";
 import { createServerClient } from "@supabase/ssr";
 import { type NextRequest, NextResponse } from "next/server";
 
@@ -39,14 +40,10 @@ export const updateSession = async (request: NextRequest) => {
     // https://supabase.com/docs/guides/auth/server-side/nextjs
     const user = await supabase.auth.getUser();
 
-    // protected routes
-    if (request.nextUrl.pathname.startsWith("/dashboard") && user.error) {
+    // Redirect to sign-in if user is not logged in
+    if (PROTECTED_ROUTES.includes(request.nextUrl.pathname) && user.error) {
       return NextResponse.redirect(new URL("/sign-in", request.url));
     }
-
-    // if (request.nextUrl.pathname === "/" && !user.error) {
-    //   return NextResponse.redirect(new URL("/dashboard", request.url));
-    // }
 
     return response;
   } catch (e) {
