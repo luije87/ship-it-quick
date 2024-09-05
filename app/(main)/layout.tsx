@@ -3,6 +3,7 @@ import { createClient } from "@/utils/supabase/server";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { signOutAction } from "../actions";
+import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
 
 export const metadata: Metadata = {
   title: "Ship it Quick",
@@ -29,6 +30,16 @@ export default async function RootLayout({
         </div>
         <div className="flex-none">
           <ul className="px-3 gap-5 flex mr-5">
+            <li className="hover:link">
+              <a
+                target="_blank"
+                href="https://github.com/luije87/ship-it-quick"
+                className="hover:link flex items-center justify-center gap-1"
+              >
+                Github
+                <ArrowUpRightIcon className="h-5 w-5" />
+              </a>
+            </li>
             <li className="hover:link">
               <Link href="/pricing" className="hover:link">
                 Pricing
