@@ -31,7 +31,7 @@ export default async function RootLayout({
           </Link>
         </div>
         <div className="flex-none">
-          <ul className="px-3 gap-5 flex mr-5 items-center">
+          <ul className="gap-5 flex items-center">
             <li className="hover:link">
               <a
                 target="_blank"
