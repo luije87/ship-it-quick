@@ -146,6 +146,8 @@ export default function Example({ user, products, subscription }: Props) {
           </div>
           <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-3">
             {products.map((product) => {
+              const select =
+                product.name === subscription?.prices?.products?.name;
               const price = product?.prices?.find(
                 (price) => price.interval === billingInterval
               );
@@ -160,33 +162,27 @@ export default function Example({ user, products, subscription }: Props) {
                 <div
                   key={product.id}
                   className={classNames(
-                    "",
-                    {
-                      "border border-pink-500": subscription
-                        ? product.name === subscription?.prices?.products?.name
-                        : product.name === "Modern",
-                    },
-                    "flex-1", // This makes the flex item grow to fill the space
-                    "basis-1/3", // Assuming you want each card to take up roughly a third of the container's width
-                    "max-w-xs" // Sets a maximum width to the cards to prevent them from getting too large
+                    select ? "ring-2 ring-indigo-600" : "ring-1 ring-gray-200",
+                    "rounded-3xl p-8 xl:p-10"
                   )}
                 >
-                  <h3
-                    id={product.id}
-                    className={classNames(
-                      {
-                        "border border-pink-500": subscription
-                          ? product.name ===
-                            subscription?.prices?.products?.name
-                          : product.name === "Simple",
-                      }
-                        ? "text-indigo-600"
-                        : "text-gray-900",
-                      "text-lg font-semibold leading-8"
-                    )}
-                  >
-                    {product.name}
-                  </h3>
+                  <div className="flex items-center justify-between gap-x-4">
+                    <h3
+                      id={product.id}
+                      className={classNames(
+                        select ? "text-indigo-600" : "text-gray-900",
+                        "text-lg font-semibold leading-8"
+                      )}
+                    >
+                      {product.name}
+                    </h3>
+                    {select ? (
+                      <p className="rounded-full bg-indigo-600/10 px-2.5 py-1 text-xs font-semibold leading-5 text-indigo-600">
+                        Your Subscription
+                      </p>
+                    ) : null}
+                  </div>
+
                   <p className="mt-4 text-sm leading-6 text-gray-600">
                     {product.description}
                   </p>

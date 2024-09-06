@@ -2,6 +2,7 @@ import "@/app/globals.css";
 import { signOutAction } from "@/utils/auth-helpers/actions";
 import { APPLICATION_NAME } from "@/config";
 import { SubmitButton } from "@/components/ui/submit-button";
+import Link from "next/link";
 
 export const metadata = {
   title: "Ship it quick ⚡️",
@@ -13,7 +14,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       <div className="navbar bg-base-100">
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl">{APPLICATION_NAME}</a>
+          <Link className="btn btn-ghost text-xl" href={"/"}>
+            {APPLICATION_NAME}
+          </Link>
         </div>
         <div className="flex-none">
           <form>
