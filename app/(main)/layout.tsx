@@ -31,7 +31,7 @@ export default async function RootLayout({
           </Link>
         </div>
         <div className="flex-none">
-          <ul className="px-3 gap-5 flex mr-5">
+          <ul className="px-3 gap-5 flex mr-5 items-center">
             <li className="hover:link">
               <a
                 target="_blank"
@@ -52,26 +52,27 @@ export default async function RootLayout({
                 Dashboard
               </Link>
             </li>
+            <li>
+              {user ? (
+                <>
+                  <form>
+                    <SubmitButton
+                      pendingText="Signing out..."
+                      formAction={signOutAction}
+                      className="btn"
+                    >
+                      Sign out
+                    </SubmitButton>
+                  </form>
+                </>
+              ) : (
+                <Link href="/sign-in">
+                  Sign in<span aria-hidden="true">&rarr;</span>
+                </Link>
+              )}
+            </li>
           </ul>
-          {user ? (
-            <>
-              <form>
-                <SubmitButton
-                  pendingText="Signing out..."
-                  formAction={signOutAction}
-                  className="btn"
-                >
-                  Sign out
-                </SubmitButton>
-              </form>
-            </>
-          ) : (
-            <>
-              <Link href="/sign-in">
-                Sign in<span aria-hidden="true">&rarr;</span>
-              </Link>
-            </>
-          )}
+          <ul></ul>
         </div>
       </div>
       <main>{children}</main>
