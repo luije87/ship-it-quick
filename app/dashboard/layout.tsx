@@ -1,6 +1,7 @@
 import "@/app/globals.css";
 import { signOutAction } from "@/utils/auth-helpers/actions";
 import { APPLICATION_NAME } from "@/config";
+import { SubmitButton } from "@/components/ui/submit-button";
 
 export const metadata = {
   title: "Ship it quick ⚡️",
@@ -16,9 +17,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
         <div className="flex-none">
           <form>
-            <button formAction={signOutAction} className="btn">
+            <SubmitButton
+              pendingText="Signing out..."
+              formAction={signOutAction}
+              className="btn"
+            >
               Sign out
-            </button>
+            </SubmitButton>
           </form>
         </div>
       </div>

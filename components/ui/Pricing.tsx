@@ -36,6 +36,7 @@ interface Props {
 type BillingInterval = "lifetime" | "year" | "month";
 
 export default function Example({ user, products, subscription }: Props) {
+  console.log("subscription", subscription?.prices?.products?.name);
   const intervals = Array.from(
     new Set(
       products.flatMap((product) =>
@@ -144,8 +145,8 @@ export default function Example({ user, products, subscription }: Props) {
             </fieldset>
           </div>
           <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-3">
-            {products.map((tier) => {
-              const price = tier?.prices?.find(
+            {products.map((product) => {
+              const price = product?.prices?.find(
                 (price) => price.interval === billingInterval
               );
               if (!price) return null;
@@ -157,23 +158,37 @@ export default function Example({ user, products, subscription }: Props) {
 
               return (
                 <div
-                  key={tier.id}
+                  key={product.id}
                   className={classNames(
-                    false ? "ring-2 ring-indigo-600" : "ring-1 ring-gray-200",
-                    "rounded-3xl p-8"
+                    "",
+                    {
+                      "border border-pink-500": subscription
+                        ? product.name === subscription?.prices?.products?.name
+                        : product.name === "Modern",
+                    },
+                    "flex-1", // This makes the flex item grow to fill the space
+                    "basis-1/3", // Assuming you want each card to take up roughly a third of the container's width
+                    "max-w-xs" // Sets a maximum width to the cards to prevent them from getting too large
                   )}
                 >
                   <h3
-                    id={tier.id}
+                    id={product.id}
                     className={classNames(
-                      false ? "text-indigo-600" : "text-gray-900",
+                      {
+                        "border border-pink-500": subscription
+                          ? product.name ===
+                            subscription?.prices?.products?.name
+                          : product.name === "Simple",
+                      }
+                        ? "text-indigo-600"
+                        : "text-gray-900",
                       "text-lg font-semibold leading-8"
                     )}
                   >
-                    {tier.name}
+                    {product.name}
                   </h3>
                   <p className="mt-4 text-sm leading-6 text-gray-600">
-                    {tier.description}
+                    {product.description}
                   </p>
                   <p className="mt-6 flex items-baseline gap-x-1">
                     <span className="text-4xl font-bold tracking-tight text-gray-900">
@@ -186,12 +201,12 @@ export default function Example({ user, products, subscription }: Props) {
                   <button
                     onClick={() =>
                       handleStripeCheckout(
-                        tier.prices.find(
+                        product.prices.find(
                           (price) => price.interval === billingInterval
                         ) as Price
                       )
                     }
-                    aria-describedby={tier.id}
+                    aria-describedby={product.id}
                     className={classNames(
                       true
                         ? "bg-indigo-600 text-white shadow-sm hover:bg-indigo-500"

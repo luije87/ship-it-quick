@@ -1,6 +1,7 @@
 import { signUpAction } from "@/utils/auth-helpers/actions";
 import { FormMessage, Message } from "@/components/ui/form-message";
 import Link from "next/link";
+import { SubmitButton } from "@/components/ui/submit-button";
 
 export default function Example({ searchParams }: { searchParams: Message }) {
   return (
@@ -38,9 +39,13 @@ export default function Example({ searchParams }: { searchParams: Message }) {
             required
           />
         </label>
-        <button formAction={signUpAction} className="btn max-w-xs mt-3">
+        <SubmitButton
+          pendingText="Signing Up..."
+          formAction={signUpAction}
+          className="btn max-w-xs mt-3"
+        >
           Sign up
-        </button>
+        </SubmitButton>
       </div>
     </form>
   );

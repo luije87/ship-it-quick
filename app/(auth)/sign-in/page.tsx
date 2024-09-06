@@ -2,6 +2,7 @@ import { signInAction } from "@/utils/auth-helpers/actions";
 import { FormMessage, Message } from "@/components/ui/form-message";
 import OAuthSignIn from "@/components/ui/OAuthSignIn";
 import Link from "next/link";
+import { SubmitButton } from "@/components/ui/submit-button";
 
 export default function Example({ searchParams }: { searchParams: Message }) {
   return (
@@ -53,13 +54,13 @@ export default function Example({ searchParams }: { searchParams: Message }) {
               autoComplete="current-password"
             />
           </label>
-          <button
-            type="submit"
+          <SubmitButton
+            pendingText="Signing In..."
             formAction={signInAction}
             className="btn max-w-xs mt-3"
           >
             Sign in
-          </button>
+          </SubmitButton>
         </div>
       </form>
       <OAuthSignIn />

@@ -1,4 +1,5 @@
 import "@/app/globals.css";
+import { SubmitButton } from "@/components/ui/submit-button";
 import { APPLICATION_NAME } from "@/config";
 import { signOutAction } from "@/utils/auth-helpers/actions";
 import { createClient } from "@/utils/supabase/server";
@@ -55,14 +56,17 @@ export default async function RootLayout({
           {user ? (
             <>
               <form>
-                <button formAction={signOutAction} className="btn">
+                <SubmitButton
+                  pendingText="Signing out..."
+                  formAction={signOutAction}
+                  className="btn"
+                >
                   Sign out
-                </button>
+                </SubmitButton>
               </form>
             </>
           ) : (
             <>
-              {" "}
               <Link href="/sign-in" className="btn">
                 Sign in
               </Link>

@@ -1,4 +1,5 @@
 import { FormMessage, Message } from "@/components/ui/form-message";
+import { SubmitButton } from "@/components/ui/submit-button";
 import { forgotPasswordAction } from "@/utils/auth-helpers/actions";
 import Link from "next/link";
 
@@ -30,12 +31,13 @@ export default function Example({ searchParams }: { searchParams: Message }) {
               required
             />
           </label>
-          <button
+          <SubmitButton
+            pendingText="Resetting Password ..."
             formAction={forgotPasswordAction}
             className="btn max-w-xs mt-3"
           >
             Reset Password
-          </button>
+          </SubmitButton>
         </div>
       </form>
     </>
