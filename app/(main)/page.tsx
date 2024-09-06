@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="hero min-h-screen">
+    <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-20 lg:items-start px-8 py-8 lg:py-20">
       <div className="hero-content text-center">
         <div className="max-w-5xl">
           <h1 className="text-5xl font-bold mb-5">⚡️</h1>

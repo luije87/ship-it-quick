@@ -15,7 +15,7 @@ export default async function Layout({
 }>) {
   return (
     <>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 mx-auto flex items-center justify-between px-2 sm:px-4 lg:max-w-7xl">
         <div className="flex-1">
           <Link className="btn btn-ghost text-xl" href={"/"}>
             {APPLICATION_NAME}

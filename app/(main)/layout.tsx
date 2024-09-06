@@ -24,7 +24,7 @@ export default async function RootLayout({
   } = await supabase.auth.getUser();
   return (
     <>
-      <div className="navbar bg-base-100 fixed">
+      <div className="navbar bg-base-100 mx-auto flex items-center justify-between px-2 sm:px-4 lg:max-w-7xl">
         <div className="flex-1">
           <Link href="/" className="btn btn-ghost text-xl">
             {APPLICATION_NAME}
@@ -67,8 +67,8 @@ export default async function RootLayout({
             </>
           ) : (
             <>
-              <Link href="/sign-in" className="btn">
-                Sign in
+              <Link href="/sign-in">
+                Sign in<span aria-hidden="true">&rarr;</span>
               </Link>
             </>
           )}
