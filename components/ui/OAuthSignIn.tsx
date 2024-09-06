@@ -35,8 +35,8 @@ export default function Example() {
 
   return (
     <>
-      <div className="divider max-w-xs">OR</div>
-      <div className="flex justify-between max-w-xs gap-4">
+      <div className="divider">OR</div>
+      <div className="flex justify-between gap-4">
         {oAuthProviders.map((provider) => (
           <form
             onSubmit={(e) => handleSubmit(e)}

@@ -21,11 +21,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="flex-none">
           <form>
             <SubmitButton
-              pendingText="Signing out..."
+              pendingText="Logging out..."
               formAction={signOutAction}
               className="btn"
             >
-              Sign out
+              Log out
             </SubmitButton>
           </form>
         </div>

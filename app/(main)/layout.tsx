@@ -57,17 +57,20 @@ export default async function RootLayout({
                 <>
                   <form>
                     <SubmitButton
-                      pendingText="Signing out..."
+                      pendingText="Logging out..."
                       formAction={signOutAction}
                       className="btn"
                     >
-                      Sign out
+                      Logout
                     </SubmitButton>
                   </form>
                 </>
               ) : (
                 <Link href="/sign-in">
-                  Sign in<span aria-hidden="true">&rarr;</span>
+                  Login
+                  <span aria-hidden="true" className="ml-2">
+                    &rarr;
+                  </span>
                 </Link>
               )}
             </li>

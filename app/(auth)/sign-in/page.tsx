@@ -7,20 +7,20 @@ import { SubmitButton } from "@/components/ui/submit-button";
 export default function Example({ searchParams }: { searchParams: Message }) {
   return (
     <>
-      <form className="flex-1 flex flex-col min-w-64">
-        <h1 className="text-2xl font-medium">Sign in</h1>
+      <form className="flex-1 flex flex-col min-w-sm">
+        <h1 className="text-2xl font-medium">Login</h1>
         <p className="text-sm text-foreground">
           Do not have an account?{" "}
           <Link
             className="text-foreground font-medium underline"
             href="/sign-up"
           >
-            Sign up
+            Register
           </Link>
         </p>
         <FormMessage message={searchParams} />
         <div className="flex flex-col gap-2 [&>input]:mb-3 mt-3">
-          <label className="form-control w-full max-w-xs" htmlFor="email">
+          <label className="form-control max-w-full" htmlFor="email">
             <div className="label">
               <span className="label-text">Email</span>
             </div>
@@ -28,12 +28,13 @@ export default function Example({ searchParams }: { searchParams: Message }) {
               name="email"
               type="email"
               placeholder="Email"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered"
               required
               autoComplete="email"
+              autoFocus
             />
           </label>
-          <label className="form-control w-full max-w-xs" htmlFor="password">
+          <label className="form-control max-w-full" htmlFor="password">
             <div className="label">
               <span className="label-text">Password</span>
               <span className="label-text-alt">
@@ -49,17 +50,17 @@ export default function Example({ searchParams }: { searchParams: Message }) {
               name="password"
               type="password"
               placeholder="Your password"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered"
               required
               autoComplete="current-password"
             />
           </label>
           <SubmitButton
-            pendingText="Signing In..."
+            pendingText="Logging in..."
             formAction={signInAction}
-            className="btn max-w-xs mt-3"
+            className="btn mt-3"
           >
-            Sign in
+            Login
           </SubmitButton>
         </div>
       </form>

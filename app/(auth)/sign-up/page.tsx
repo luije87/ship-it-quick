@@ -5,17 +5,17 @@ import { SubmitButton } from "@/components/ui/submit-button";
 
 export default function Example({ searchParams }: { searchParams: Message }) {
   return (
-    <form className="flex-1 flex flex-col min-w-64">
-      <h1 className="text-2xl font-medium">Sign up</h1>
+    <form className="flex-1 flex flex-col">
+      <h1 className="text-2xl font-medium">Register</h1>
       <p className="text-sm text text-foreground">
         Already have an account?{" "}
         <Link className="text-foreground font-medium underline" href="/sign-in">
-          Sign in
+          Login
         </Link>
       </p>
       <FormMessage message={searchParams} />
       <div className="flex flex-col gap-2 [&>input]:mb-3 mt-3">
-        <label className="form-control w-full max-w-xs">
+        <label className="form-control">
           <div className="label">
             <span className="label-text">Email</span>
           </div>
@@ -23,11 +23,12 @@ export default function Example({ searchParams }: { searchParams: Message }) {
             name="email"
             type="text"
             placeholder="you@example.com"
-            className="input input-bordered w-full max-w-xs"
+            className="input input-bordered"
             required
+            autoFocus
           />
         </label>
-        <label className="form-control w-full max-w-xs">
+        <label className="form-control">
           <div className="label">
             <span className="label-text">Password</span>
           </div>
@@ -35,16 +36,16 @@ export default function Example({ searchParams }: { searchParams: Message }) {
             name="password"
             type="password"
             placeholder="Your password"
-            className="input input-bordered w-full max-w-xs"
+            className="input input-bordered"
             required
           />
         </label>
         <SubmitButton
-          pendingText="Signing Up..."
+          pendingText="Registering..."
           formAction={signUpAction}
-          className="btn max-w-xs mt-3"
+          className="btn mt-3"
         >
-          Sign up
+          Register
         </SubmitButton>
       </div>
     </form>
