@@ -6,3 +6,4 @@ export const MAX_AMOUNT = 5000.0;
 export const AMOUNT_STEP = 5.0;
 export const PROTECTED_ROUTES = ["/dashboard"];
 export const APPLICATION_NAME = "Ship it Quick ⚡️";
+export const RESEND_FROM_EMAIL = "Acme <onboarding@resend.dev>";
