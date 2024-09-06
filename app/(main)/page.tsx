@@ -18,7 +18,7 @@ export default function Home() {
             of Supabase, Resend, Next.js, Tailwind CSS and Stripe, so you can
             focus on innovation while we handle the heavy lifting.
           </p>
-          <div className="flex items-center justify-center gap-10 mt-10">
+          <div className="grid grid-cols-1 sm:grid-cols-5 gap-5 justify-items-center items-center">
             <Image
               src={"/supabase-logo-wordmark--light.png"}
               width={100}
