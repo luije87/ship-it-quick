@@ -33,7 +33,7 @@ export default function Example({ searchParams }: { searchParams: Message }) {
           </div>
           <input
             name="password"
-            type="text"
+            type="password"
             placeholder="Your password"
             className="input input-bordered w-full max-w-xs"
             required
