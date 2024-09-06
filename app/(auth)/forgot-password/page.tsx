@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Example({ searchParams }: { searchParams: Message }) {
   return (
     <>
-      <form className="flex-1 flex flex-col min-w-64">
+      <form className="flex-1 flex flex-col">
         <h1 className="text-2xl font-medium">Reset Password</h1>
         <p className="text-sm text-secondary-foreground">
           Already have an account?{" "}
@@ -19,7 +19,7 @@ export default function Example({ searchParams }: { searchParams: Message }) {
         </p>
         <FormMessage message={searchParams} />
         <div className="flex flex-col gap-2 [&>input]:mb-3 mt-3s">
-          <label className="form-control w-full max-w-xs">
+          <label className="form-control">
             <div className="label">
               <span className="label-text">Email</span>
             </div>
@@ -27,14 +27,16 @@ export default function Example({ searchParams }: { searchParams: Message }) {
               name="email"
               type="email"
               placeholder="Email"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered"
               required
+              autoComplete="email"
+              autoFocus
             />
           </label>
           <SubmitButton
             pendingText="Resetting Password ..."
             formAction={forgotPasswordAction}
-            className="btn max-w-xs mt-3"
+            className="btn mt-3"
           >
             Reset Password
           </SubmitButton>
