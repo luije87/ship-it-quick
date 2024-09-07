@@ -3,7 +3,7 @@ import { SubmitButton } from "@/components/ui/submit-button";
 import { APPLICATION_NAME } from "@/config";
 import { signOutAction } from "@/utils/auth-helpers/actions";
 import { createClient } from "@/utils/supabase/server";
-import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
+import { ArrowUpRightIcon, ArrowRightIcon } from "@heroicons/react/20/solid";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -26,7 +26,7 @@ export default async function RootLayout({
     <>
       <div className="navbar bg-base-100 mx-auto flex items-center justify-between px-2 sm:px-4 lg:max-w-7xl">
         <div className="flex-1">
-          <Link href="/" className="btn btn-ghost text-xl">
+          <Link href="/" className="btn btn-ghost text-2xl">
             {APPLICATION_NAME}
           </Link>
         </div>
@@ -59,18 +59,19 @@ export default async function RootLayout({
                     <SubmitButton
                       pendingText="Logging out..."
                       formAction={signOutAction}
-                      className="btn"
+                      className="btn "
                     >
                       Logout
                     </SubmitButton>
                   </form>
                 </>
               ) : (
-                <Link href="/sign-in">
+                <Link
+                  href="/sign-in"
+                  className="hover:link flex items-center justify-center gap-1"
+                >
                   Login
-                  <span aria-hidden="true" className="ml-2">
-                    &rarr;
-                  </span>
+                  <ArrowRightIcon className="h-5 w-5" />
                 </Link>
               )}
             </li>
