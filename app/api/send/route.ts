@@ -47,6 +47,8 @@ import { Resend } from "resend";
 // }
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// http://host.docker.internal:3000/api/send
+
 export async function POST(request: NextRequest) {
   const json = await request.json();
   const record = json.record;
