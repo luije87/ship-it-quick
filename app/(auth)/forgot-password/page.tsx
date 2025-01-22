@@ -36,7 +36,7 @@ export default function Example({ searchParams }: { searchParams: Message }) {
           <SubmitButton
             pendingText="Resetting Password ..."
             formAction={forgotPasswordAction}
-            className="btn mt-3"
+            className="btn btn-active btn-neutral mt-3"
           >
             Reset Password
           </SubmitButton>

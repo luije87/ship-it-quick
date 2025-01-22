@@ -23,7 +23,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <SubmitButton
               pendingText="Logging out..."
               formAction={signOutAction}
-              className="btn"
+              className="btn btn-active btn-neutral"
             >
               Log out
             </SubmitButton>

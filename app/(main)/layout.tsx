@@ -59,7 +59,7 @@ export default async function RootLayout({
                     <SubmitButton
                       pendingText="Logging out..."
                       formAction={signOutAction}
-                      className="btn "
+                      className="btn btn-active btn-neutral"
                     >
                       Logout
                     </SubmitButton>

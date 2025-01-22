@@ -58,7 +58,7 @@ export default function Example({ searchParams }: { searchParams: Message }) {
           <SubmitButton
             pendingText="Logging in..."
             formAction={signInAction}
-            className="btn mt-3"
+            className="btn btn-active btn-neutral mt-3"
           >
             Login
           </SubmitButton>

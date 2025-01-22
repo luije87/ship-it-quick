@@ -1,4 +1,5 @@
 import { FormMessage, Message } from "@/components/ui/form-message";
+import { SubmitButton } from "@/components/ui/submit-button";
 import { resetPasswordAction } from "@/utils/auth-helpers/actions";
 
 export default async function ResetPassword({
@@ -15,7 +16,7 @@ export default async function ResetPassword({
             Please enter your new password below.
           </p>
           <FormMessage message={searchParams} />
-          <label className="form-control w-full max-w-xs">
+          <label className="form-control">
             <div className="label">
               <span className="label-text">New password</span>
             </div>
@@ -23,11 +24,11 @@ export default async function ResetPassword({
               name="password"
               type="password"
               placeholder="New password"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered"
               required
             />
           </label>
-          <label className="form-control w-full max-w-xs">
+          <label className="form-control">
             <div className="label">
               <span className="label-text">Confirm password</span>
             </div>
@@ -35,17 +36,18 @@ export default async function ResetPassword({
               type="password"
               name="confirmPassword"
               placeholder="Confirm password"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered"
               required
             />
           </label>
-          <button
-            className="btn max-w-xs mt-3"
+          <SubmitButton
+            pendingText="Resetting password ..."
+            className="btn btn-active btn-neutral mt-3"
             type="submit"
             formAction={resetPasswordAction}
           >
             Reset password
-          </button>
+          </SubmitButton>
         </form>
       </div>
     </div>
